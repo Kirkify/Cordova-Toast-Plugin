@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com-kirkify-plugins-echo" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>KirkifyEcho</name>
+    <description>Kirkify Demo Cordova Plugin</description>
+    <license>MIT</license>
+    <keywords>cordova,demo,kirkify</keywords>
+    <js-module name="KirkifyEcho" src="www/KirkifyEcho.js">
+        <clobbers target="kirkifyecho" />
+    </js-module>
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="KirkifyEcho">
+                <param name="android-package"
+                       value="com.kirkify.plugin.KirkifyEcho"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/com/kirkify/plugin/KirkifyEcho.java"
+                     target-dir="src/com/kirkify/plugin" />
+    </platform>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="KirkifyEcho">
+                <param name="ios-package" value="KirkifyEcho" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/KirkifyEcho.h" />
+        <source-file src="src/ios/KirkifyEcho.m" />
+    </platform>
+</plugin>
